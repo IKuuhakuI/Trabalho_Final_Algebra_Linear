@@ -17,30 +17,32 @@ def LerCsv (nomeArquivo, matrizOrigem, numeroGrupo):
 			matrizOrigem.append (linhas[indice]);
 
 def SepararTipos (matrizOrigem, irisSetosa, irisVersicolor, irisVirginica):
-	for linha in matrizOrigem:
-		if linha [-1] == "Iris-setosa":
-			irisSetosa.append (linha[1:-1])
+	for linhaOrigem in matrizOrigem:
 
-		elif linha [-1] == "Iris-versicolor":
-			irisVersicolor.append (linha[1:-1])
+		if linhaOrigem [-1] == "Iris-setosa":
+
+			linhaOrigem [-1] = 1
+
+			for indice in range (1, 5):
+				linhaOrigem [indice] = float (linhaOrigem [indice])
+
+			irisSetosa.append (linhaOrigem [1:])
+
+		elif linhaOrigem [-1] == "Iris-versicolor":
+
+			linhaOrigem [-1] = 1
+
+			for indice in range (1, 5):
+				linhaOrigem [indice] = float (linhaOrigem [indice])
+
+			irisVersicolor.append (linhaOrigem [1:])
 	
 		else:
-			irisVirginica.append (linha[1:-1])
+			linhaOrigem [-1] = 1
+
+			for indice in range (1, 5):
+				linhaOrigem [indice] = float (linhaOrigem [indice])
+				
+			irisVirginica.append (linhaOrigem [1:])
 
 
-# TESTES ########
-#matrizOrigem = []
-#
-#matriz1 = []
-#matriz2 = []
-#matriz3 = []
-#
-#LerCsv ("Iris.csv", matrizOrigem, 1)
-#
-#SepararTipos (matrizOrigem, matriz1, matriz2, matriz3)
-#
-#print (matriz1)
-#input ()
-#print (matriz2)
-#input()
-#print (matriz3)
