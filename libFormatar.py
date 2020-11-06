@@ -45,4 +45,20 @@ def SepararTipos (matrizOrigem, irisSetosa, irisVersicolor, irisVirginica):
 				
 			irisVirginica.append (linhaOrigem [1:])
 
+def FormatarMatriz (matrizOrigem, matrizIndependente, matrizDependente):
+	indiceLargura = 1;
+
+	for i in range (len(matrizOrigem)):
+		
+		linhaIndependente = []
+		linhaDependente = []
+
+		for j in range (len(matrizOrigem[0])):
+			if j != 2:
+				linhaDependente.append (matrizOrigem[i][j])
+			else:
+				linhaIndependente.append (matrizOrigem[i][j])
+
+		matrizIndependente.append (list (linhaIndependente))
+		matrizDependente.append (list (linhaDependente))			
 
