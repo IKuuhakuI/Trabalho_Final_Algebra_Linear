@@ -25,15 +25,23 @@ def GerarMatrizTransposta (matrizOrigem, matrizTransposta):
 
 		matrizTransposta.append (list(linhaAtual))
 	
-def MultiplicarMatrizes (matA, matB, linA, colA, colB):
+def MultiplicarMatrizes (primeiraMatriz, segundaMatriz, matrizResultado):
 
-	resultado = criaMatriz(linA, colB)
+	linhasPrimeiraMatriz = len (primeiraMatriz)
+	colunasPrimeiraMatriz = len (primeiraMatriz [0])
 
-	for i in range(linA):
-		for k in range(colB):
-			soma = 0
-			for j in range(colA):
-				soma = soma + matA[i][j] * matB[j][k]
-			resultado[i][k] = soma
+	linhasSegundaMatriz = len (segundaMatriz)
+	colunasSegundaMatriz = len (segundaMatriz [0])
 
-	return resultado
+	for i in range (linhasPrimeiraMatriz):
+		linhaAtual = []
+
+		for j in range (colunasSegundaMatriz):
+			valorAtual = 0
+
+			for indice in range (colunasPrimeiraMatriz):	
+				valorAtual += primeiraMatriz [i][indice] * segundaMatriz [indice][j]
+
+			linhaAtual.append (valorAtual)
+
+		matrizResultado.append (list (linhaAtual))

@@ -1,5 +1,5 @@
 from libFormatar import LerCsv, SepararTipos, FormatarMatriz
-from libMatriz import GerarMatrizTransposta
+from libMatriz import GerarMatrizTransposta, MultiplicarMatrizes
 
 # TESTES ########
 matrizOrigem = []
@@ -28,3 +28,13 @@ print (matrizDependente1)
 
 print ("\nMatriz 1 transposta: ")
 print (matrizTransposta1)
+
+print("\n\nTeste de multiplicacao:")
+matrizA = [[1, 0, 3], [-2, 1, 2]]
+matrizB = [[1, 0], [-1, -2], [0, -3]]
+matrizResultado = []
+
+MultiplicarMatrizes (matrizA, matrizB, matrizResultado)
+print (matrizA)
+print (matrizB)
+print (matrizResultado)
