@@ -1,5 +1,5 @@
 from libFormatar import LerCsv, SepararTipos, FormatarMatriz
-from libMatriz import GerarMatrizTransposta, MultiplicarMatrizes
+from libMatriz import GerarMatrizTransposta, MultiplicarMatrizes, MostrarMatriz
 
 # TESTES ########
 matrizOrigem = []
@@ -20,14 +20,15 @@ FormatarMatriz (matriz1, matrizIndependente1, matrizDependente1)
 GerarMatrizTransposta (matriz1, matrizTransposta1)
 
 print ("Matriz 1:")
-print (matriz1)
+MostrarMatriz (matriz1)
 
 print ("\nMatriz 1 formatada: ")
-print (matrizIndependente1)
-print (matrizDependente1)
+MostrarMatriz (matrizIndependente1)
+print ()
+MostrarMatriz (matrizDependente1)
 
 print ("\nMatriz 1 transposta: ")
-print (matrizTransposta1)
+MostrarMatriz (matrizTransposta1)
 
 print("\n\nTeste de multiplicacao:")
 matrizA = [[1, 0, 3], [-2, 1, 2]]
@@ -35,6 +36,11 @@ matrizB = [[1, 0], [-1, -2], [0, -3]]
 matrizResultado = []
 
 MultiplicarMatrizes (matrizA, matrizB, matrizResultado)
-print (matrizA)
-print (matrizB)
-print (matrizResultado)
+print ("Matriz A:")
+MostrarMatriz (matrizA)
+
+print ("\nMatriz B:")
+MostrarMatriz (matrizB)
+
+print ("\nMatriz Resultado:")
+MostrarMatriz (matrizResultado)
