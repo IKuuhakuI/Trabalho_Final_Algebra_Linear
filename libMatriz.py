@@ -8,9 +8,35 @@
 
 
 def MostrarMatriz (matriz):
-	for i in range(linhas):
-		print(matriz [i])
 
+	linhas = len (matriz)
+	colunas = len (matriz [0])
+
+	print (end="\t")
+
+	for contador in range (colunas):
+		print ("----------------", end="")
+	print ()
+
+	for i in range (linhas):
+
+		print ("\t|\t", end="")
+
+		for j in range (colunas):
+
+			print(matriz[i][j], end = "\t")
+
+			if j < (colunas - 1):
+				print ("|", end="\t")			
+			else:
+				print ("|", end="")
+
+		print ("\n", end="\t")
+
+		for contador in range (colunas):
+			print ("----------------", end="")
+
+		print ()
 
 def GerarMatrizTransposta (matrizOrigem, matrizTransposta):
 	linhas = len (matrizOrigem)
