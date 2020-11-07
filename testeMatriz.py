@@ -1,10 +1,10 @@
-from libMatriz import MostrarMatriz, GeraMatrizTransposta, MultiplicarMatrizes
+from libMatriz import MostrarMatriz, GerarMatrizTransposta, MultiplicarMatrizes
 
 print("\nI - GERANDO MATRIZES DE TESTE\n")
 
 matriz5x1 = [0] * 5
 for linha in range(5):
-    matriz5x1[linha] = linha
+    matriz5x1[linha] = [linha]
 print("Matriz 5x1: ")
 print(matriz5x1)
 
@@ -23,9 +23,11 @@ print("\nII - TESTE GERAR MATRIZ TRANSPOSTA \n")
 
 matriz5x1Transposta = []
 matriz5x5Transposta = []
-GeraMatrizTransposta(matriz5x1, matriz5x1Transposta)
-GeraMatrizTransposta(matriz5x5, matriz5x5Transposta)
+GerarMatrizTransposta(matriz5x1, matriz5x1Transposta)
+GerarMatrizTransposta(matriz5x5, matriz5x5Transposta)
+print("Matriz 5x1 transposta")
 MostrarMatriz(matriz5x1Transposta)
+print("\nMatriz 5x5 transposta")
 MostrarMatriz(matriz5x5Transposta)
 
 print("\nIII - TESTE MULTIPLICAR MATRIZES \n")
@@ -34,7 +36,9 @@ matriz5x1VezesTransposta = []
 matriz5x5VezesTransposta = []
 MultiplicarMatrizes(matriz5x1, matriz5x1Transposta, matriz5x1VezesTransposta)
 MultiplicarMatrizes(matriz5x5, matriz5x5Transposta, matriz5x5VezesTransposta)
+print("Matriz 5x1 x Matriz 5x1 transposta")
 MostrarMatriz(matriz5x1VezesTransposta)
+print("\nMatriz 5x5 x Matriz 5x5 transposta")
 MostrarMatriz(matriz5x5VezesTransposta)
 
 print()
