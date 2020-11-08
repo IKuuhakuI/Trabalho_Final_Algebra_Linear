@@ -1,10 +1,9 @@
 from libFormatar import LerCsv, SepararTipos, FormatarMatriz
-from libMatriz import GerarMatrizTransposta, MultiplicarMatrizes, MostrarMatriz
 from libMenu import MostrarMenu, VerificarOpcao
 
 def main ():
 	# Controles do Menu
-	criarModeloLinear = True
+	verificarCriarModeloLinear = True
 	opcaoSelecionada = '0'
 
 	# Informacoes para leitura do arquivo CSV
@@ -42,13 +41,16 @@ def main ():
 	# Iris-setosa
 	FormatarMatriz (matrizDadoIrisVirginica, matrizIrisVirginicaIndependente, matrizIrisVirginicaDependente)
 	
-	while (criarModeloLinear):
+	while (verificarCriarModeloLinear):
 		MostrarMenu ()
 
 		opcaoSelecionada = input ("Selecione a sua opcao: ")
 		print ()
 
-		criarModeloLinear = VerificarOpcao (opcaoSelecionada)
+		verificarCriarModeloLinear = VerificarOpcao (opcaoSelecionada)	
+	
+		if (verificarCriarModeloLinear == True):
+			pass			
 
 # Chamada da main
 main ()
