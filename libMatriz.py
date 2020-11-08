@@ -23,8 +23,10 @@ def MostrarMatriz (matriz):
 		print ("\t|\t", end="")
 
 		for j in range (colunas):
+			
+			temp = float ("{:.2f}".format(matriz[i][j]))
 
-			print(matriz[i][j], end = "\t")
+			print(temp, end = "\t")
 
 			if j < (colunas - 1):
 				print ("|", end="\t")			
