@@ -46,6 +46,7 @@ def main ():
 		MostrarMenu ()
 
 		opcaoSelecionada = input ("Selecione a sua opcao: ")
+		print ()
 
 		if (opcaoSelecionada == '0'):
 			criarModeloLinear = False
@@ -59,6 +60,8 @@ def main ():
 		elif (opcaoSelecionada == '3'):
 			print (3)
 
+		else:
+			print ("Opcao invalida!")
 
 # Chamada da main
 main ()
