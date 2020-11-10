@@ -19,23 +19,23 @@ def main ():
 	
 	# Matrizes de cada flor (termo dependente e independente)
 	#Iris-setosa
-	matrizIrisSetosaDependente = []
-	matrizIrisSetosaDependenteTransposta= []
-	matrizIrisSetosaIndependente = []
-	multiplicaIrisSetosaTranspostaIndependente = []
-	multiplicaIrisSetosaTranspostaDependente = []
+	matrizIrisSetosaX = []
+	matrizIrisSetosaXt= []
+	matrizIrisSetosaY = []
+	matrizIrisSetosaXtX = []
+	matrizIrisSetosaXtY = []
 	#Iris-versicolor
-	matrizIrisVersicolorDependente = []
-	matrizIrisVersicolorDependenteTransposta= []
-	matrizIrisVersicolorIndependente = []
-	multiplicaIrisVersicolorTranspostaIndependente = []
-	multiplicaIrisVersicolorTranspostaDependente = []
+	matrizIrisVersicolorX = []
+	matrizIrisVersicolorXt= []
+	matrizIrisVersicolorY = []
+	matrizIrisVersicolorXtX = []
+	matrizIrisVersicolorXtY = []
 	#Iris-virginica
-	matrizIrisVirginicaDependente = []
-	matrizIrisVirginicaDependenteTransposta= []
-	matrizIrisVirginicaIndependente = []
-	multiplicaIrisVirginicaTranspostaIndependente = []
-	multiplicaIrisVirginicaTranspostaDependente = []
+	matrizIrisVirginicaX = []
+	matrizIrisVirginicaXt= []
+	matrizIrisVirginicaY = []
+	matrizIrisVirginicaXtX = []
+	matrizIrisVirginicaXtY = []
 
 	# Leitura do arquivo CSV
 	LerCsv (nomeArquivo, linhasArquivo, grupo)
@@ -45,25 +45,25 @@ def main ():
 
 	# Formatando os dados
 	# Iris-setosa
-	FormatarMatriz (matrizDadoIrisSetosa, matrizIrisSetosaIndependente, matrizIrisSetosaDependente)
-	GerarMatrizTransposta (matrizIrisSetosaDependente, matrizIrisSetosaDependenteTransposta)	
+	FormatarMatriz (matrizDadoIrisSetosa, matrizIrisSetosaY, matrizIrisSetosaX)
+	GerarMatrizTransposta (matrizIrisSetosaX, matrizIrisSetosaXt)	
 	# Iris-versicolor
-	FormatarMatriz (matrizDadoIrisVersicolor, matrizIrisVersicolorIndependente, matrizIrisVersicolorDependente)
-	GerarMatrizTransposta (matrizIrisVersicolorDependente, matrizIrisVersicolorDependenteTransposta)	
+	FormatarMatriz (matrizDadoIrisVersicolor, matrizIrisVersicolorY, matrizIrisVersicolorX)
+	GerarMatrizTransposta (matrizIrisVersicolorX, matrizIrisVersicolorXt)	
 	# Iris-setosa
-	FormatarMatriz (matrizDadoIrisVirginica, matrizIrisVirginicaIndependente, matrizIrisVirginicaDependente)
-	GerarMatrizTransposta (matrizIrisVirginicaDependente, matrizIrisVirginicaDependenteTransposta)	
+	FormatarMatriz (matrizDadoIrisVirginica, matrizIrisVirginicaY, matrizIrisVirginicaX)
+	GerarMatrizTransposta (matrizIrisVirginicaX, matrizIrisVirginicaXt)	
 
 	# Multiplicacoes
 	# Iris Setosa
-	MultiplicarMatrizes (matrizIrisSetosaDependenteTransposta, matrizIrisSetosaIndependente, multiplicaIrisSetosaTranspostaIndependente)
-	MultiplicarMatrizes (matrizIrisSetosaDependenteTransposta, matrizIrisSetosaDependente, multiplicaIrisSetosaTranspostaDependente)
+	MultiplicarMatrizes (matrizIrisSetosaXt, matrizIrisSetosaY, matrizIrisSetosaXtY)
+	MultiplicarMatrizes (matrizIrisSetosaXt, matrizIrisSetosaX, matrizIrisSetosaXtX)
 	# Iris Versicolor
-	MultiplicarMatrizes (matrizIrisVersicolorDependenteTransposta, matrizIrisVersicolorIndependente, multiplicaIrisVersicolorTranspostaIndependente)
-	MultiplicarMatrizes (matrizIrisVersicolorDependenteTransposta, matrizIrisVersicolorDependente, multiplicaIrisVersicolorTranspostaDependente)
+	MultiplicarMatrizes (matrizIrisVersicolorXt, matrizIrisVersicolorY, matrizIrisVersicolorXtY)
+	MultiplicarMatrizes (matrizIrisVersicolorXt, matrizIrisVersicolorX, matrizIrisVersicolorXtX)
 	# Iris Virginica
-	MultiplicarMatrizes (matrizIrisVirginicaDependenteTransposta, matrizIrisVirginicaIndependente, multiplicaIrisVirginicaTranspostaIndependente)
-	MultiplicarMatrizes (matrizIrisVirginicaDependenteTransposta, matrizIrisVirginicaDependente, multiplicaIrisVirginicaTranspostaDependente)
+	MultiplicarMatrizes (matrizIrisVirginicaXt, matrizIrisVirginicaY, matrizIrisVirginicaXtY)
+	MultiplicarMatrizes (matrizIrisVirginicaXt, matrizIrisVirginicaX, matrizIrisVirginicaXtX)
 	
 	while (verificarCriarModeloLinear):
 		MostrarMenu ()
@@ -75,12 +75,25 @@ def main ():
 	
 		if (verificarCriarModeloLinear == True):
 			if (opcaoSelecionada == '1'):
-				MostrarMatriz (multiplicaIrisSetosaTranspostaIndependente)
+				print ("Íris Setosa X^t Y: \n")
+				MostrarMatriz (matrizIrisSetosaXtY)
+				print("Íris Setosa X^t X: \n")
+				MostrarMatriz (matrizIrisSetosaXtX)
+				print()
 			
 			elif (opcaoSelecionada == '2'):
-				MostrarMatriz (multiplicaIrisVersicolorTranspostaIndependente)
+				print("Íris Versicolor X^t Y: \n")
+				MostrarMatriz (matrizIrisVersicolorXtY)
+				print("Íris Versicolor X^t X: \n")
+				MostrarMatriz (matrizIrisVersicolorXtX)
+				print()
 
 			elif (opcaoSelecionada == '3'):
-				MostrarMatriz (multiplicaIrisVirginicaTranspostaIndependente)
+				print("Íris Virgínica X^t Y: \n")
+				MostrarMatriz(matrizIrisVirgínicaXtY)
+				print("Íris Virgínica X^t X: \n")
+				MostrarMatriz(matrizIrisVirgínicaXtX)
+				print()
+
 # Chamada da main
 main ()

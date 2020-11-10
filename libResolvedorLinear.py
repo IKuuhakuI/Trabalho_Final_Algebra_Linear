@@ -76,5 +76,36 @@ def CalcularHouseholder(A):
 # Retorno -> w é o vetor (lista) de coeficientes da regressão linear
 
 
-def ResolverSistema(matrizCoeficientes, vetorIndependente):
+def ResolverSistema(matrizA, vetorB, vetorIncognitas):
+    # Aplica uma decomposição QR por Householder na matriz dos coef. do sistema
+    # A x = b
+    # Q R x = b 
+    Q, R = CalcularHouseholder(matrizA)
+
+    # Calula o transposto da matriz ortogonal que é igual ao seu inverso
+    Qt = []
+    GerarMatrizTransposta (Q, Qt)
+
+    # Multiplica pelo vetor de termos independentes do sistema
+    # Qt Q R x = Qt b
+    # I R x = Qt b
+    # R x = Qt b
+    QtB = []
+    MultiplicarMatrizes(Qt, vetorB, QtB)
+    
+    # Calcula a dimensão de R (deve ser 15x15)
+    dimensaoMatrizR = len(R)
+    
+    # Preenche o vetor de incognitas
+    for numeroLinhas in range(dimensaoMatrizR)
+        vetorIncognitas.append (0)
+
+    # Realização da backsubstitution
+    # Varre cada termo do vetor de incógnitas
+    for indice in range(dimensaoMatrizR):
+        # Começa do termo mais em baixo
+        indiceVetorIncognita = dimensaoMatrizR - indice - 1
+
+        
+
     return 0
