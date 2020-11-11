@@ -1,6 +1,7 @@
 from libFormatar import LerCsv, SepararTipos, FormatarMatriz
 from libMatriz import GerarMatrizTransposta, MultiplicarMatrizes, MostrarMatriz
 from libMenu import MostrarMenu, VerificarOpcao
+from libResolvedorLinear import ResolverSistema
 
 def main ():
 	# Controles do Menu
@@ -36,6 +37,11 @@ def main ():
 	matrizIrisVirginicaY = []
 	matrizIrisVirginicaXtX = []
 	matrizIrisVirginicaXtY = []
+
+	# Coeficientes de cada flor
+	coeficientesIrisSetosa = []
+	coeficientesIrisVersicolor = []
+	coeficientesIrisVirginica = []
 
 	# Leitura do arquivo CSV
 	LerCsv (nomeArquivo, linhasArquivo, grupo)
@@ -75,25 +81,60 @@ def main ():
 	
 		if (verificarCriarModeloLinear == True):
 			if (opcaoSelecionada == '1'):
-				print ("Íris Setosa X^t Y: \n")
-				MostrarMatriz (matrizIrisSetosaXtY)
-				print("Íris Setosa X^t X: \n")
-				MostrarMatriz (matrizIrisSetosaXtX)
+				ResolverSistema(matrizIrisSetosaXtX, matrizIrisSetosaXtY,
+				coeficientesIrisSetosa)
+				print("------------------------------------------------------------------------------------")
+				#MostrarMatriz(coeficientesIrisSetosa)
+				print("\nModelo Linear da Íris Setosa: \n")
+				print("PL = " + str(coeficientesIrisSetosa[0][0]) + " SL + " \
+											+ str(coeficientesIrisSetosa[1][0]) + " SW + " \
+											+ str(coeficientesIrisSetosa[2][0]) + " PW + " \
+											+ str(coeficientesIrisSetosa[3][0]))
 				print()
+				print("Onde:")
+				print("PL - Comprimento da pétala em cm")
+				print("SL - Comprimento da sépala em cm")
+				print("SW - Largura da sépala em cm")
+				print("PW - Largura da pétala em cm")
+				print()
+				print("------------------------------------------------------------------------------------\n")
 			
 			elif (opcaoSelecionada == '2'):
-				print("Íris Versicolor X^t Y: \n")
-				MostrarMatriz (matrizIrisVersicolorXtY)
-				print("Íris Versicolor X^t X: \n")
-				MostrarMatriz (matrizIrisVersicolorXtX)
+				ResolverSistema(matrizIrisVersicolorXtX, matrizIrisVersicolorXtY,
+				coeficientesIrisVersicolor)
+				print("------------------------------------------------------------------------------------")
+				print("\nModelo Linear da Íris Versicolor: \n")
+				print("PL = " + str(coeficientesIrisVersicolor[0][0]) + " SL + " \
+											+ str(coeficientesIrisVersicolor[1][0]) + " SW + " \
+											+ str(coeficientesIrisVersicolor[2][0]) + " PW + " \
+											+ str(coeficientesIrisVersicolor[3][0]))
 				print()
+				print("Onde:")
+				print("PL - Comprimento da pétala em cm")
+				print("SL - Comprimento da sépala em cm")
+				print("SW - Largura da sépala em cm")
+				print("PW - Largura da pétala em cm")
+				print()
+				print("------------------------------------------------------------------------------------\n")
 
 			elif (opcaoSelecionada == '3'):
-				print("Íris Virgínica X^t Y: \n")
-				MostrarMatriz(matrizIrisVirgínicaXtY)
-				print("Íris Virgínica X^t X: \n")
-				MostrarMatriz(matrizIrisVirgínicaXtX)
+				
+				ResolverSistema(matrizIrisVirginicaXtX, matrizIrisVirginicaXtY,
+				coeficientesIrisVirginica)
+				print("------------------------------------------------------------------------------------")
+				print("\nModelo Linear da Íris Virgínica: \n")
+				print("PL = " + str(coeficientesIrisVirginica[0][0]) + " SL + " \
+											+ str(coeficientesIrisVirginica[1][0]) + " SW + " \
+											+ str(coeficientesIrisVirginica[2][0]) + " PW + " \
+											+ str(coeficientesIrisVirginica[3][0]))
 				print()
+				print("Onde:")
+				print("PL - Comprimento da pétala em cm")
+				print("SL - Comprimento da sépala em cm")
+				print("SW - Largura da sépala em cm")
+				print("PW - Largura da pétala em cm")
+				print()
+				print("------------------------------------------------------------------------------------\n")
 
 # Chamada da main
 main ()
