@@ -1,4 +1,4 @@
-from libFormatar import LerCsv, SepararTipos, FormatarMatriz
+from libFormatar import LerCsv, SepararTipos, FormatarMatriz, MostrarModelo
 from libMatriz import GerarMatrizTransposta, MultiplicarMatrizes, MostrarMatriz
 from libMenu import MostrarMenu, VerificarOpcao
 from libResolvedorLinear import ResolverSistema
@@ -85,11 +85,14 @@ def main ():
 				coeficientesIrisSetosa)
 				print("------------------------------------------------------------------------------------")
 				#MostrarMatriz(coeficientesIrisSetosa)
+
 				print("\nModelo Linear da Íris Setosa: \n")
-				print("PL = " + str(coeficientesIrisSetosa[0][0]) + " SL + " \
-											+ str(coeficientesIrisSetosa[1][0]) + " SW + " \
-											+ str(coeficientesIrisSetosa[2][0]) + " PW + " \
-											+ str(coeficientesIrisSetosa[3][0]))
+				
+				MostrarModelo (coeficientesIrisSetosa)
+				#print("PL = " + str(coeficientesIrisSetosa[0][0]) + " SL + " \
+				#							+ str(coeficientesIrisSetosa[1][0]) + " SW + " \
+				#							+ str(coeficientesIrisSetosa[2][0]) + " PW + " \
+				#							+ str(coeficientesIrisSetosa[3][0]))
 				print()
 				print("Onde:")
 				print("PL - Comprimento da pétala em cm")
@@ -104,10 +107,12 @@ def main ():
 				coeficientesIrisVersicolor)
 				print("------------------------------------------------------------------------------------")
 				print("\nModelo Linear da Íris Versicolor: \n")
-				print("PL = " + str(coeficientesIrisVersicolor[0][0]) + " SL + " \
-											+ str(coeficientesIrisVersicolor[1][0]) + " SW + " \
-											+ str(coeficientesIrisVersicolor[2][0]) + " PW + " \
-											+ str(coeficientesIrisVersicolor[3][0]))
+	
+				MostrarModelo (coeficientesIrisVersicolor)
+				#print("PL = " + str(coeficientesIrisVersicolor[0][0]) + " SL + " \
+				#							+ str(coeficientesIrisVersicolor[1][0]) + " SW + " \
+				#							+ str(coeficientesIrisVersicolor[2][0]) + " PW + " \
+				#							+ str(coeficientesIrisVersicolor[3][0]))
 				print()
 				print("Onde:")
 				print("PL - Comprimento da pétala em cm")
@@ -123,10 +128,13 @@ def main ():
 				coeficientesIrisVirginica)
 				print("------------------------------------------------------------------------------------")
 				print("\nModelo Linear da Íris Virgínica: \n")
-				print("PL = " + str(coeficientesIrisVirginica[0][0]) + " SL + " \
-											+ str(coeficientesIrisVirginica[1][0]) + " SW + " \
-											+ str(coeficientesIrisVirginica[2][0]) + " PW + " \
-											+ str(coeficientesIrisVirginica[3][0]))
+
+				MostrarModelo (coeficientesIrisVirginica)				
+	
+				#print("PL = " + str(coeficientesIrisVirginica[0][0]) + " SL + " \
+				#							+ str(coeficientesIrisVirginica[1][0]) + " SW + " \
+				#							+ str(coeficientesIrisVirginica[2][0]) + " PW + " \
+				#							+ str(coeficientesIrisVirginica[3][0]))
 				print()
 				print("Onde:")
 				print("PL - Comprimento da pétala em cm")
@@ -134,6 +142,12 @@ def main ():
 				print("SW - Largura da sépala em cm")
 				print("PW - Largura da pétala em cm")
 				print()
+				print("------------------------------------------------------------------------------------\n")
+			
+			else:
+				print("------------------------------------------------------------------------------------\n")
+				print ("Opcao invalida!")
+				print ()
 				print("------------------------------------------------------------------------------------\n")
 
 # Chamada da main

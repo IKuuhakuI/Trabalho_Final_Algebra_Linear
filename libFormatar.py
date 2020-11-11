@@ -62,3 +62,41 @@ def FormatarMatriz (matrizOrigem, matrizIndependente, matrizDependente):
 		matrizIndependente.append (list (linhaIndependente))
 		matrizDependente.append (list (linhaDependente))			
 
+def MostrarModelo (componentes):
+
+	primeiroComponente = "{:.2f}".format(componentes[0][0])
+
+	print ("PL = " + primeiroComponente + " SL", end=" ")
+				
+	if (componentes [1][0] < 0):
+		temp = componentes[1][0] * -1
+
+		segundoComponente = "{:.2f}".format(temp)
+
+		print ("- " + segundoComponente + " SW", end=" ")
+	else:
+		segundoComponente = "{:.2f}".format(componentes[1][0])
+
+		print ("+ " + segundoComponente + " SW", end=" ")
+	
+	if (componentes [2][0] < 0):
+		temp = componentes[2][0] * -1
+
+		terceiroComponente = "{:.2f}".format(componentes[2][0])
+
+		print ("- " + terceiroComponente + " PW", end=" ")
+	else:
+		terceiroComponente = "{:.2f}".format(componentes[2][0])
+
+		print ("+ " + terceiroComponente + " PW", end=" ")
+
+	if (componentes [3][0] < 0):
+		temp = componentes[3][0] * -1
+
+		quartoComponente = "{:.2f}".format(temp)
+
+		print ("- " + quartoComponente)
+	else:
+		quartoComponente = "{:.2f}".format(componentes[3][0])
+
+		print ("+ " + quartoComponente)

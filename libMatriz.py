@@ -1,12 +1,3 @@
-#def criaMatriz(linhas, colunas):
-#	mat = ['1'] * linhas
-#
-#	for i in range(linhas):
-#		mat[i] = ['1'] * colunas
-#
-#	return mat
-
-
 def MostrarMatriz (matriz):
 
 	linhas = len (matriz)
