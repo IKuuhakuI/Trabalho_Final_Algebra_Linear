@@ -97,15 +97,33 @@ def ResolverSistema(matrizA, vetorB, vetorIncognitas):
     dimensaoMatrizR = len(R)
     
     # Preenche o vetor de incognitas
-    for numeroLinhas in range(dimensaoMatrizR)
-        vetorIncognitas.append (0)
+    for numeroLinhas in range(dimensaoMatrizR):
+        vetorIncognitas.append ([0])
 
     # Realização da backsubstitution
+    # R x = (Qt b)
+    # x = ?
+
     # Varre cada termo do vetor de incógnitas
     for indice in range(dimensaoMatrizR):
         # Começa do termo mais em baixo
         indiceVetorIncognita = dimensaoMatrizR - indice - 1
 
-        
+        S = 0
+        # Ex.: dim = 5
+        # indice | indiceVetorIncognita | indiceAuxiliar
+        #   0               4                   0
+        #   1               3                 0 - 1
+        #   2               2                 0 - 2
+        #   3               1                 0 - 3
+        #   4               0                 0 - 4
+        for indiceAuxiliar in range (dimensaoMatrizR-1-indiceVetorIncognita):
+            # Calcula as operações lineares com os termos ja conhecidos
+            S = S + vetorIncognitas[indiceVetorIncognita+indiceAuxiliar+1][0] *            \
+            R[indiceVetorIncognita][indiceVetorIncognita+indiceAuxiliar+1]
+
+        # Calcula o próximo termo desconhecido do vetor de incógnitas
+        vetorIncognitas[indiceVetorIncognita][0] = (QtB[indiceVetorIncognita][0] - S) /       \
+        R[indiceVetorIncognita][indiceVetorIncognita]
 
     return 0
